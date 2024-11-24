@@ -1,0 +1,39 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: fit-content;
+    background: rgb(46, 45, 45);
+}
+
+.textosimples {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.email{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content;
+    margin: 10px;
+    justify-content: center;
+}
+
+.email a{
+    margin: 5px;
+}
+
+.gmailimg img{
+    border-radius: 50%;
+}
+
+@media (max-width:600px){
+    .email{ 
+        flex-direction: column;
+    }
+    .imgs{
+        margin: 20px;
+    }
+}

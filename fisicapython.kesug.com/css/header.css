@@ -1,0 +1,12 @@
+header {
+    display: flex;
+    overflow: auto;
+    justify-items: center;
+    justify-content: center;
+    background-color: cornflowerblue;
+}
+
+h1 {
+    display: flex;
+    color: white;
+}

@@ -1,12 +1,12 @@
 header {
     display: flex;
-    overflow: auto;
     justify-items: center;
     justify-content: center;
-    background-color: cornflowerblue;
+    background-color: rgb(57, 182, 25);
 }
 
 h1 {
+    text-align: center;
     display: flex;
     color: white;
 }

@@ -168,11 +168,11 @@ window.onload = function () {
     }
 
     // Configuration
-    let LPAtt = 36,
-        att_num = 3,
+    let LPAtt = 50,
+        att_num = 2,
         att_spd = 3,
-        segment_length = 30,
-        segment_num = 5,
+        segment_length = 10,
+        segment_num = 1000,
         att_max_d = 150,
         max_d = Math.sqrt(w * w + h * h);
 
@@ -215,6 +215,28 @@ window.onload = function () {
     }
 
     // Event listeners
+    document.getElementById('add').addEventListener('click', function() {
+        att_num += 1;
+        att.push(new Attractor(att.length - 1)); // Create a new Attractor with the correct index
+    });
+    
+    document.getElementById('remove').addEventListener('click', function() {
+        if (att.length > 0 && att_num >= 3) {
+            att_num -= 1;
+            att.pop(); // Remove the last Attractor instance
+            lines = []; // Reset lines array
+            // Recreate lines for all remaining attractors
+            for (let attractor of att) {
+                for (let i = 0; i < LPAtt; i++) {
+                    let ang = (i * 2 * Math.PI) / LPAtt;
+                    let x = Math.cos(ang);
+                    let y = Math.sin(ang);
+                    lines.push(new Line(attractor, x, y));
+                }
+            }
+        }
+    });
+
     ctx.addEventListener("mousemove", function (e) {
         mouse.x = e.pageX - this.offsetLeft;
         mouse.y = e.pageY - this.offsetTop;
@@ -227,6 +249,21 @@ window.onload = function () {
     ctx.addEventListener("mouseup", function (e) {
         mouseDown = false;
     }, false);
+
+    let lastTouchTime = 0;
+
+    document.addEventListener('touchstart', function(event) {
+        const currentTime = new Date().getTime();
+        const timeDifference = currentTime - lastTouchTime;
+
+        if (timeDifference < 300 && timeDifference > 0) {
+            mouseDown = true;
+        } else {
+            mouseDown = false;
+        }
+
+        lastTouchTime = currentTime;
+    });
 
     function fitCanvas() {
         w = ctx.width = window.innerWidth;

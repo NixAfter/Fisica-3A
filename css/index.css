@@ -1,0 +1,65 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.Exemplo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(231, 231, 231);
+    width: fit-content;
+    max-width: 20vw;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    color: black;
+}
+
+.Exemplo p{
+    text-align: center;
+}
+
+.paraossimuladores {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.ParaTexto {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(231, 231, 231);
+    width: fit-content;
+    max-width: 60vw;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    color: black;
+}
+
+.ParaTexto h1{
+    color: black;
+}
+
+@media (max-width:600px){
+    main{
+        flex-direction: column;
+    }
+    .Exemplo{
+        width: auto;
+        max-width: none;
+    }
+    .paraossimuladores {
+        display: flex;
+        flex-direction: column;
+        max-width:none;
+    }
+    .ParaTexto{
+        max-width: none;
+    }
+}

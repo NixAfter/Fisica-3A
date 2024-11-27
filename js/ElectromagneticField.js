@@ -237,6 +237,21 @@ window.onload = function () {
         }
     });
 
+    ctx.addEventListener("touchmove", function (e) {
+        e.preventDefault(); // Prevent scrolling
+        const touch = e.touches[0];
+        mouse.x = touch.pageX - this.offsetLeft;
+        mouse.y = touch.pageY - this.offsetTop;
+    }, false);
+    
+    ctx.addEventListener("touchstart", function (e) {
+        mouseDown = true;
+    }, false);
+    
+    ctx.addEventListener("touchend", function (e) {
+        mouseDown = false;
+    }, false);
+
     ctx.addEventListener("mousemove", function (e) {
         mouse.x = e.pageX - this.offsetLeft;
         mouse.y = e.pageY - this.offsetTop;

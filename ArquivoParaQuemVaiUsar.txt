@@ -1,0 +1,6 @@
+Não usa este repositorio como treino, eu prometo que
+não vai te beneficiar, eu sou um programador junior e
+algumas partes do codigo podem ter alternativas melhores
+para determinada função.
+
+Muito obrigado por ler :)

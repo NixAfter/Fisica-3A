@@ -1,4 +1,4 @@
 # Fisica-3A
-Um projeto escolar sobre o mecanismo de um reator nuclear.
+Um projeto escolar para demonstar a importancia e beneficio da progamação computacional na física.
 
-Com Ajuda dos alunos:Alex, Alan, Kayo, João Flores.
+Com Ajuda dos alunos:Alex, Allan, Kayo, João Vitor Flores.
